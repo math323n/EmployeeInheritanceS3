@@ -20,8 +20,10 @@ namespace EmployeeInheritanceS3
             Console.WriteLine($"BasePlusCommissionEmployee har en ugeløn på 1000, han sælger også 25 ting der koster 100 hver, " +
                 $"og tjener 5% af det. I alt tjener han; {basePlus.GetPaymentAmount()}");
 
+            // Invoice
             Invoice order = new Invoice("34343", "A Foundation Starship", 4, 92400);
-            Console.WriteLine($"Faktura for invoice er Antal(4) gange pris(924000) som er: {order.GetPaymentAmount()}");
+            double orderResult = order.GetPaymentAmount();
+            Console.WriteLine($"Faktura for invoice er Antal(${order.Quantity}) gange pris({order.PricePerItem}) som er: {orderResult}");
         }
 
     }
