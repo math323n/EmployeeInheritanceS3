@@ -4,13 +4,13 @@ using System.Text;
 
 namespace EmployeeInheritanceS3.Entities
 {
-    public class BasePlusCommissionEmployee : CommissionEmployee
+    public class BasePlusCommissionEmployee: CommissionEmployee
     {
         protected double baseSalary;
 
         public BasePlusCommissionEmployee(string firstName, string lastName, string socialSecurityNumber,
             double grossSales, double commisissonRate, double baseSalary)
-            : base (firstName, lastName, socialSecurityNumber, grossSales, commisissonRate)
+            : base(firstName, lastName, socialSecurityNumber, grossSales, commisissonRate)
         {
             BaseSalary = baseSalary;
         }
@@ -30,6 +30,11 @@ namespace EmployeeInheritanceS3.Entities
             }
         }
 
-
+        public override double GetPaymentAmount()
+        {
+            double sales = grossSales * 100;
+            double percent = commisissonRate;
+            return baseSalary + (sales * percent / 100);
+        }
     }
 }

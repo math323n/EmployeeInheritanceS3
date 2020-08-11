@@ -26,7 +26,7 @@ namespace EmployeeInheritanceS3.Entities
             {
                 if(wage != value)
                 {
-                    wage = value; 
+                    wage = value;
                 }
             }
         }

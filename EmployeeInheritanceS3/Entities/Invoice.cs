@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EmployeeInheritanceS3.Entities
 {
-    public class Invoice : IPayable
+    public class Invoice: IPayable
     {
         protected string partNumber;
         protected string partDescription;
@@ -81,7 +81,7 @@ namespace EmployeeInheritanceS3.Entities
 
         public double GetPaymentAmount()
         {
-            return 1 + 1;
+            return pricePerItem * quantity;
         }
     }
 }
